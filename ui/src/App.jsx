@@ -4,7 +4,7 @@ import { TodoApp } from './components';
 function App() {
   return (
     <div style={{ width: '500px', margin: '0 auto'}}>
-      <TodoApp/>
+      <TodoApp />
     </div>
   );
 }
