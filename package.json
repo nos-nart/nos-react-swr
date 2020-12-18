@@ -1,0 +1,19 @@
+{
+  "name": "nos-react-swr",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/nos-nart/nos-react-swr.git",
+  "author": "nam hoang <nam.hoang@ntq-solution.com.vn>",
+  "license": "MIT",
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  },
+  "scripts": {
+    "install:api": "cd api && yarn",
+    "install:ui": "cd ui && yarn",
+    "install": "concurrently \"yarn install:api\" \"yarn install:ui\"",
+    "api": "cd api && yarn start",
+    "ui": "cd ui && yarn start",
+    "dev": "concurrently \"yarn api\" \"yarn ui\""
+  }
+}
