@@ -10,7 +10,17 @@ const { Text } = Typography;
 export const TodoList = () => {
   const [loading, setLoading] = React.useState(false);
 
+  console.log('run 1')
   const { todos, error } = useTodo('/todos');
+  console.log('run 2')
+  React.useEffect(() => {
+    if (!todos) {
+      console.log('loading')
+    }
+    console.log('xxx ~> ', todos)
+  }, []);
+
+  console.log('yyy ~> ', todos);
 
   // if (!todos) { setLoading(true) }
 
