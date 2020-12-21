@@ -1,6 +1,6 @@
 import React from 'react'
-import { TodoHeader, TodoFilter, TodoList } from '.';
-
+import { TodoHeader, TodoFilter, TodoList, TodoFooter } from '.';
+import { Divider } from 'antd';
 
 export const TodoApp = () => {
   return (
@@ -11,6 +11,8 @@ export const TodoApp = () => {
       <TodoFilter />
       <br/>
       <TodoList />
+      <Divider/>
+      <TodoFooter />
     </>
   )
 }

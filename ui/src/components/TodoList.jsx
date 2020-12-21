@@ -1,5 +1,5 @@
 import React from 'react'
-import { Row, Table, Typography, Checkbox, Space, Button } from 'antd';
+import { Row, Table, Typography, Checkbox, Space, Button, Empty } from 'antd';
 import styles from '../App.module.css';
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
 import { useTodo } from '../lib/useTodo';
@@ -8,31 +8,18 @@ const { Column } = Table;
 const { Text } = Typography;
 
 export const TodoList = () => {
-  const [loading, setLoading] = React.useState(false);
-
-  console.log('run 1')
   const { todos, error } = useTodo('/todos');
-  console.log('run 2')
-  React.useEffect(() => {
-    if (!todos) {
-      console.log('loading')
-    }
-    console.log('xxx ~> ', todos)
-  }, []);
 
-  console.log('yyy ~> ', todos);
-
-  // if (!todos) { setLoading(true) }
+  if (error) return <Empty />;
 
   return (
     <Row>
-      {JSON.stringify(todos)}
-      {/* <Table
+      <Table
         className={styles.wfull}
         bordered={true}
-        loading={loading}
-        hasData={todos.length}
-        dataSource={todos || []}
+        loading={todos === undefined}
+        hasData={todos && todos.length}
+        dataSource={todos}
         pagination={false}
         size="small"
       >
@@ -73,7 +60,7 @@ export const TodoList = () => {
               </Space>
             )}
           />
-      </Table> */}
+      </Table>
     </Row>
   )
 }
