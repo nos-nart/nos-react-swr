@@ -1,4 +1,4 @@
-# Todo APP
+# swr + antd
 
 ## api
 + json-server
@@ -11,6 +11,8 @@
 + axios
 
 ### Fetching data by swr
+`lib/useTodo.js`
+
 ```js
 import useSWR from 'swr';
 import axios from 'axios';
