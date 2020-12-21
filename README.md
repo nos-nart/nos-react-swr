@@ -82,3 +82,12 @@ function Profile () {
   )
 }
 ```
+
+### Features
+
+- [x] List
+- [x] Add
+- [ ] Delete
+- [ ] Edit
+- [ ] Filter
+- [ ] Clear all
