@@ -10,6 +10,8 @@
 + swr
 + axios
 
+![example](https://github.com/nos-nart/nos-react-swr/blob/master/swr.gif)
+
 ### Fetching data by swr
 `lib/useTodo.js`
 
