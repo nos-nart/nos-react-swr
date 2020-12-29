@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/nos-nart/nos-react-swr.git",
-  "author": "nam hoang <nam.hoang@ntq-solution.com.vn>",
+  "author": "nosnart <nosnart1510@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "concurrently": "^5.3.0"
