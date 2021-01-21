@@ -7,7 +7,6 @@ import axios from 'axios';
 
 const { Title } = Typography;
 const fetcher = (url) => axios.get(url).then(res => res.data);
-const baseURL = 'http://localhost:4000/todos';
 
 const openNotificationWithIcon = (type, mssg, desc) => {
   notification[type]({
@@ -19,12 +18,12 @@ const openNotificationWithIcon = (type, mssg, desc) => {
 
 export const TodoHeader = () => {
   const [task, setTask] = React.useState('');
-  const { data } = useSWR(baseURL, fetcher);
+  const { data } = useSWR('/todos', fetcher);
 
   //NOTE: https://swr.vercel.app/docs/mutation#mutation-and-post-request
   const onAdd  = async () => {
     await axios({
-      url: baseURL,
+      url: '/todos',
       method: 'POST',
       data: {
         title: task,
@@ -32,7 +31,7 @@ export const TodoHeader = () => {
         complete: false
       }
     });
-    mutate(baseURL, [...data, {title: task, id: nanoid(), complete: false }], false);
+    mutate('/todos', [...data, {title: task, id: nanoid(), complete: false }], false);
     setTask('');
     openNotificationWithIcon('success', 'Successfully', 'Added an item to todo-list 👍');
   }
