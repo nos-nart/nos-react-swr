@@ -7,7 +7,7 @@
     "@testing-library/jest-dom": "^5.11.8",
     "@testing-library/react": "^11.2.3",
     "@testing-library/user-event": "^12.7.1",
-    "antd": "^4.11.2",
+    "antd": "^4.13.0",
     "axios": "^0.21.1",
     "nanoid": "^3.1.20",
     "react": "^17.0.1",
